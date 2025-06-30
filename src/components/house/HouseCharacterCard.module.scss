@@ -1,0 +1,54 @@
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  position: relative;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.image {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.details {
+  text-align: center;
+  font-size: 0.9rem;
+
+  p {
+    margin: 0.25rem 0;
+  }
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Yeni ikon konumlandırmaları */
+.iconTopRight {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.iconTopLeft {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
