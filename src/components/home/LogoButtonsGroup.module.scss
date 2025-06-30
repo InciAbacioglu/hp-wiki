@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  position: relative;
+}
+
+.logoContainer {
+  width: 600px;
+  height: 600px;
+  background-image: url("/hogwarts-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.invisibleButton {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  opacity: 0;
+
+  &:hover {
+    opacity: 0.2;
+  }
+}
+
+.gryffindor {
+  top: 34%;
+  left: 30%;
+}
+
+.slytherin {
+  top: 34%;
+  right: 30%;
+}
+
+.ravenclaw {
+  top: 55%;
+  right: 30%;
+}
+
+.hufflepuff {
+  top: 55%;
+  left: 30%;
+}
