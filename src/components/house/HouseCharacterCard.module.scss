@@ -1,5 +1,5 @@
 .card {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid #ccc;
   border-radius: 12px;
   padding: 1rem;
@@ -9,11 +9,18 @@
   align-items: center;
   width: 220px;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 
   &:hover {
     transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.7);
+
+    .details {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }
 
@@ -28,6 +35,9 @@
 .details {
   text-align: center;
   font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 
   p {
     margin: 0.25rem 0;
@@ -38,9 +48,9 @@
   font-size: 1.1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  opacity: 1 !important;
 }
 
-/* Yeni ikon konumlandırmaları */
 .iconTopRight {
   position: absolute;
   top: 8px;

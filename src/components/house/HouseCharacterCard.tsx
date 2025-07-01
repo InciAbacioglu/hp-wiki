@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./HouseCharacterCard.module.scss";
 import { GiDeathSkull } from "react-icons/gi";
 import { FaHeart } from "react-icons/fa";
-
 import { PiDrop, PiDropHalf, PiDropFill } from "react-icons/pi";
 
 type Props = {
@@ -79,9 +78,9 @@ export default function HouseCharacterCard({
         )}
         {wand && (wand.wood || wand.core || wand.length) && (
           <p>
-            <strong>Wand:</strong> {wand.wood && `${wand.wood}`}{" "}
-            {wand.core && `with a ${wand.core}`}{" "}
-            {wand.length && `(${wand.length} inches)`}
+            <strong>Wand:</strong> {wand.wood ? wand.wood : ""}{" "}
+            {wand.core ? `with a ${wand.core}` : ""}{" "}
+            {wand.length ? `(${wand.length} inches)` : ""}
           </p>
         )}
       </div>

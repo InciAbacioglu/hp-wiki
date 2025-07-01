@@ -1,33 +1,57 @@
-.pageWrapper {
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  background-size: cover;
-  background-position: center;
-  padding: 0;
+  gap: 2rem;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
 }
 
-.mainContent {
+.leftPanel {
   flex: 1;
-  padding: 2rem 4vw;
+  max-width: 360px;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.rightPanel {
+  flex: 3;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
   color: #fff;
-  margin-bottom: 2rem;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-  letter-spacing: 1.2px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  align-self: center;
 }
 
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+/* Ev temalarına özel renkler */
+.gryffindor {
+  background: linear-gradient(to right, #740001, #d3a625);
+}
+
+.slytherin {
+  background: linear-gradient(to right, #1a472a, #5a7d47);
+}
+
+.ravenclaw {
+  background: linear-gradient(to right, #0e1a40, #946b2d);
+}
+
+.hufflepuff {
+  background: linear-gradient(to right, #ecb939, #60605c);
 }

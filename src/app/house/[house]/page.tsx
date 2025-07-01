@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import HouseCharacterCard from "@/components/house/HouseCharacterCard";
+import HouseInfoCard from "@/components/house/HouseInfoCard";
 import styles from "./styles.module.scss";
 
 export default function HousePage() {
@@ -16,16 +17,25 @@ export default function HousePage() {
   }, [house]);
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>{house?.toString()} House</h1>
-      <div className={styles.cardGrid}>
-        {characters.map((char) => (
-          <HouseCharacterCard
-            key={char.name + char.dateOfBirth}
-            {...char}
-            bloodStatus={char.ancestry}
-          />
-        ))}
+    <div
+      className={`${styles.container} ${
+        styles[house?.toString() || "gryffindor"]
+      }`}
+    >
+      <div className={styles.leftPanel}>
+        <HouseInfoCard house={house?.toString() || "gryffindor"} />
+      </div>
+      <div className={styles.rightPanel}>
+        <h1 className={styles.title}>{house?.toString()} House</h1>
+        <div className={styles.cardGrid}>
+          {characters.map((char) => (
+            <HouseCharacterCard
+              key={char.name + char.dateOfBirth}
+              {...char}
+              bloodStatus={char.ancestry}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
