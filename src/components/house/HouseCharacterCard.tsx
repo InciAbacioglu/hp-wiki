@@ -11,7 +11,11 @@ type Props = {
   dateOfBirth?: string;
   species?: string;
   patronus?: string;
-  wand?: string;
+  wand?: {
+    wood?: string;
+    core?: string;
+    length?: number;
+  };
   alive?: boolean;
   bloodStatus?: "pure-blood" | "half-blood" | "muggle-born";
 };
@@ -73,9 +77,11 @@ export default function HouseCharacterCard({
             <strong>Patronus:</strong> {patronus}
           </p>
         )}
-        {wand && (
+        {wand && (wand.wood || wand.core || wand.length) && (
           <p>
-            <strong>Wand:</strong> {wand}
+            <strong>Wand:</strong> {wand.wood && `${wand.wood}`}{" "}
+            {wand.core && `with a ${wand.core}`}{" "}
+            {wand.length && `(${wand.length} inches)`}
           </p>
         )}
       </div>

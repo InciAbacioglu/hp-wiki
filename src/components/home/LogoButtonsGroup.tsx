@@ -7,7 +7,7 @@ export default function LogoButtonsGroup() {
   const router = useRouter();
 
   const handleClick = (house: string) => {
-    router.push(`/house-page-content/${house}`);
+    router.push(`/house/${house}`);
   };
 
   return (
