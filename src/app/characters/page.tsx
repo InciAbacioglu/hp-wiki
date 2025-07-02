@@ -3,8 +3,39 @@ import { useEffect, useState } from "react";
 import HouseCharacterCard from "@/components/house/HouseCharacterCard";
 import styles from "./styles.module.scss";
 
+type BloodStatus = "pure-blood" | "half-blood" | "muggle-born";
+
+type Character = {
+  name: string;
+  image: string;
+  dateOfBirth?: string;
+  species?: string;
+  patronus?: string;
+  wand?: {
+    wood?: string;
+    core?: string;
+    length?: number;
+  };
+  alive?: boolean;
+  ancestry?: string;
+};
+
+const allowedBloodStatuses: BloodStatus[] = [
+  "pure-blood",
+  "half-blood",
+  "muggle-born",
+];
+
+function toValidBloodStatus(
+  input: string | undefined
+): BloodStatus | undefined {
+  return allowedBloodStatuses.includes(input as BloodStatus)
+    ? (input as BloodStatus)
+    : undefined;
+}
+
 export default function AllCharactersPage() {
-  const [characters, setCharacters] = useState<any[]>([]);
+  const [characters, setCharacters] = useState<Character[]>([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -38,7 +69,7 @@ export default function AllCharactersPage() {
             patronus={char.patronus}
             wand={char.wand}
             alive={char.alive}
-            bloodStatus={char.ancestry}
+            bloodStatus={toValidBloodStatus(char.ancestry)}
           />
         ))}
       </div>
