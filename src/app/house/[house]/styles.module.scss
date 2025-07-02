@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   padding: 2rem;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
@@ -10,10 +10,9 @@
 .leftPanel {
   flex: 1;
   max-width: 360px;
-  background-color: rgba(255, 255, 255, 0.08);
+
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
 }
 
 .rightPanel {
@@ -29,7 +28,7 @@
   margin-bottom: 1rem;
   color: #fff;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  align-self: center;
+  align-self: flex-start;
 }
 
 .cardGrid {
@@ -39,7 +38,6 @@
   padding-bottom: 2rem;
 }
 
-/* Ev temalarına özel renkler */
 .gryffindor {
   background: linear-gradient(to right, #740001, #d3a625);
 }
