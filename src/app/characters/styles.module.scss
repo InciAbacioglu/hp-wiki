@@ -4,6 +4,10 @@
   min-height: 100vh;
   color: #fff;
   font-family: "Georgia", serif;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 }
 
 .title {
@@ -12,6 +16,10 @@
   color: #ffcc00;
   margin-bottom: 2rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+
+  @media (max-width: 480px) {
+    font-size: 2.2rem;
+  }
 }
 
 .searchInput {
@@ -26,6 +34,15 @@
   background: #333;
   color: white;
   box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    font-size: 0.95rem;
+  }
 }
 
 .cardGrid {
@@ -33,4 +50,8 @@
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.5rem;
   padding-bottom: 2rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
