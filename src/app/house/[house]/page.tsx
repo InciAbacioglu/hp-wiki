@@ -57,7 +57,7 @@ export default function HousePage() {
         <HouseInfoCard house={house?.toString() || "gryffindor"} />
       </div>
       <div className={styles.rightPanel}>
-        <h1 className={styles.title}>{house?.toString()} House</h1>
+        {/* BAŞLIK TAMAMEN KALDIRILDI */}
         <div className={styles.cardGrid}>
           {characters.map((char) => (
             <HouseCharacterCard
