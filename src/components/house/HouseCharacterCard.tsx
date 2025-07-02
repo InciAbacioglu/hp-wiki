@@ -43,6 +43,11 @@ export default function HouseCharacterCard({
   alive = true,
   bloodStatus = "half-blood",
 }: Props) {
+  const safeImage =
+    image && image.trim() !== ""
+      ? image
+      : "https://via.placeholder.com/220x270?text=No+Image";
+
   return (
     <div className={styles.card}>
       <div className={styles.iconTopRight}>
@@ -57,9 +62,11 @@ export default function HouseCharacterCard({
         {bloodStatus === "half-blood" && <PiDropHalf size={20} />}
         {bloodStatus === "muggle-born" && <PiDrop size={20} />}
       </div>
-      <img src={image} alt={name} className={styles.image} />
+
+      <img src={safeImage} alt={name} className={styles.image} />
+      <h3 className={styles.name}>{name}</h3>
+
       <div className={styles.details}>
-        <h3 className={styles.name}>{name}</h3>
         {dateOfBirth && (
           <p>
             <strong>Birth:</strong> {dateOfBirth} ({calculateAge(dateOfBirth)}{" "}
@@ -78,9 +85,9 @@ export default function HouseCharacterCard({
         )}
         {wand && (wand.wood || wand.core || wand.length) && (
           <p>
-            <strong>Wand:</strong> {wand.wood ? wand.wood : ""}{" "}
-            {wand.core ? `with a ${wand.core}` : ""}{" "}
-            {wand.length ? `(${wand.length} inches)` : ""}
+            <strong>Wand:</strong> {wand.wood ? wand.wood : ""}
+            {wand.core ? ` with a ${wand.core}` : ""}
+            {wand.length ? ` (${wand.length} inches)` : ""}
           </p>
         )}
       </div>
