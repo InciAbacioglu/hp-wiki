@@ -5,37 +5,47 @@
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
 
 .leftPanel {
   flex: 1;
   max-width: 360px;
-
   padding: 1rem;
   border-radius: 12px;
+
+  @media (max-width: 768px) {
+    order: -1; /* SOL PANEL MOBİLDE ÜSTE GEÇER */
+    max-width: 100%;
+    padding: 0.5rem;
+  }
 }
 
 .rightPanel {
   flex: 3;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-transform: capitalize;
-  margin-bottom: 1rem;
-  color: #fff;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-  align-self: flex-start;
-}
+/* houseName classı artık kullanılmıyor ama istersen tutabiliriz */
 
 .cardGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
   padding-bottom: 2rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .gryffindor {
