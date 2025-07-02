@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
   padding: 2rem;
   min-height: 100vh;
@@ -8,6 +9,7 @@
 
   @media (max-width: 768px) {
     flex-direction: column;
+    padding: 1rem;
     gap: 1.5rem;
   }
 }
@@ -19,9 +21,9 @@
   border-radius: 12px;
 
   @media (max-width: 768px) {
-    order: -1; /* SOL PANEL MOBİLDE ÜSTE GEÇER */
     max-width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem;
+    order: -1; // Üste gelsin
   }
 }
 
@@ -29,13 +31,12 @@
   flex: 3;
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   @media (max-width: 768px) {
     width: 100%;
   }
 }
-
-/* houseName classı artık kullanılmıyor ama istersen tutabiliriz */
 
 .cardGrid {
   display: grid;
@@ -48,6 +49,7 @@
   }
 }
 
+/* House temaları (aynı kalabilir) */
 .gryffindor {
   background: linear-gradient(to right, #740001, #d3a625);
 }

@@ -1,34 +1,74 @@
 .header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 12px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  position: relative;
   z-index: 10;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 .logo {
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  letter-spacing: 1px;
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
+}
+
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+
+  @media (max-width: 600px) {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.text {
+  font-family: "Georgia", serif;
+  font-size: 1.3rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.1rem;
+  }
 }
 
 .nav {
   display: flex;
-  gap: 24px;
 
   a {
-    color: #f0f0f0;
+    margin-left: 1.5rem;
+    color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-weight: 500;
+    transition: opacity 0.2s;
 
     &:hover {
-      color: #ffffff;
-      text-decoration: underline;
+      opacity: 0.8;
     }
+
+    @media (max-width: 600px) {
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    justify-content: center;
+    gap: 1rem;
   }
 }

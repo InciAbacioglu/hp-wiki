@@ -8,7 +8,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Image
-          src="/hp-icon.png"
+          src="/hp-logo.png"
           alt="HP Logo"
           width={32}
           height={32}
