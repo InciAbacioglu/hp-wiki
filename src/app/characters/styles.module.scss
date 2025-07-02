@@ -1,80 +1,72 @@
-.charactersContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  padding: 2rem;
+.container {
+  padding: 3rem 4rem;
+  background: linear-gradient(to bottom right, #1a1a1a, #333333);
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(4px);
+  color: #f5f5f5;
+  font-family: "Georgia", serif;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 1.2rem;
-    gap: 2rem;
+  @media (max-width: 1024px) {
+    padding: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
   }
 }
 
-.leftPanel {
-  flex: 1;
-  max-width: 360px;
-  padding: 1rem;
+.title {
+  font-size: 3rem;
+  text-align: center;
+  color: #ffcc00;
+  margin-bottom: 2rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    font-size: 2.3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.9rem;
+  }
+}
+
+.searchInput {
+  display: block;
+  margin: 0 auto 2.5rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.1rem;
   border-radius: 12px;
+  border: none;
+  width: 60%;
+  max-width: 500px;
+  background: #222;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  transition: box-shadow 0.3s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 14px rgba(255, 204, 0, 0.8);
+  }
 
   @media (max-width: 768px) {
-    max-width: 100%;
-    padding: 0.75rem;
-    order: -1; // Üste gelsin
+    width: 80%;
   }
-}
 
-.rightPanel {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  @media (max-width: 480px) {
+    width: 100%;
+    font-size: 1rem;
+  }
 }
 
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.5rem;
-  padding-bottom: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  padding-bottom: 3rem;
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
-}
-
-.houseTitle {
-  font-size: 2.4rem;
-  font-weight: 600;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  color: #fff;
-  margin-bottom: 1.5rem;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.6rem;
-  }
-}
-
-/* House temaları */
-.gryffindor {
-  background: linear-gradient(to right, #740001, #d3a625);
-}
-
-.slytherin {
-  background: linear-gradient(to right, #1a472a, #5a7d47);
-}
-
-.ravenclaw {
-  background: linear-gradient(to right, #0e1a40, #946b2d);
-}
-
-.hufflepuff {
-  background: linear-gradient(to right, #ecb939, #60605c);
 }
