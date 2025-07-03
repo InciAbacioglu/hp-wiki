@@ -44,9 +44,7 @@ export default function HouseCharacterCard({
   bloodStatus = "half-blood",
 }: Props) {
   const safeImage =
-    image && image.trim() !== ""
-      ? image
-      : "https://via.placeholder.com/220x270?text=No+Image";
+    image && image.trim().length > 0 ? image : "/placeholder.png";
 
   return (
     <div className={styles.card}>
